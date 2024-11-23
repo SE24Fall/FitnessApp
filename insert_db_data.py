@@ -39,16 +39,13 @@ def insertfooddata():
         lines = file.readlines()
 
     for i in range(1, len(lines)):
-        line = lines[i].strip()  # Clean up the line
-        temp = line.split(",")  # Split into columns
-        
-        # Debugging parsed data
-        #print(f"Parsed data: {temp}")
+        line = lines[i].strip()  
+        temp = line.split(",")  
         
         # Update or insert into MongoDB
         mongo.db.food.update_one(
-            {'food': temp[0]},  # Match food
-            {'$set': {'calories': float(temp[1]), 'category': temp[2]}},  # Update or insert
+            {'food': temp[0]},  
+            {'$set': {'calories': (temp[1]), 'category': temp[2]}},  
             upsert=True
         )
         #print(f"Updated: food={temp[0]}, calories={temp[1]}, category={temp[2]}")
