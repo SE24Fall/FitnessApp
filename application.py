@@ -411,52 +411,215 @@ The Burnout Team
     return render_template('resend_verification.html')
 
 
+# @app.route("/calories", methods=['GET', 'POST'])
+# def calories():
+#     """
+#     calorie() function displays the Calorieform (calories.html) template
+#     route "/calories" will redirect to calories() function.
+#     CalorieForm() called and if the form is submitted then various values are fetched and updated into the database entries
+#     Input: Email, date, food, burnout
+#     Output: Value update in database and redirected to home page
+#     """
+#     now = datetime.now().strftime('%Y-%m-%d')
+
+#     get_session = session.get('email')
+#     if get_session is not None:
+#         form = CalorieForm()
+#         if form.validate_on_submit():
+#             if request.method == 'POST':
+#                 email = session.get('email')
+#                 food = form.food.data
+#                 try:
+#                     cals = int(food.split(" ")[-1][1:-1])
+#                 except (ValueError, IndexError):
+#                     flash('Invalid food input format. Please try again.', 'danger')
+#                     return redirect(url_for('calories'))
+#                 burn = form.burnout.data
+
+#                 temp = mongo.db.calories.find_one(
+#                     {'email': email, 'date': now})
+#                 if temp:
+#                     mongo.db.calories.update_one({'email': email, 'date': now}, {
+#                         '$set': {
+#                             'calories': temp['calories'] + cals,
+#                             'burnout': temp['burnout'] + int(burn)
+#                         }
+#                     })
+#                 else:
+#                     mongo.db.calories.insert_one({
+#                         'date': now,
+#                         'email': email,
+#                         'calories': cals,
+#                         'burnout': int(burn)
+#                     })
+#                 flash('Successfully updated the data', 'success')
+#                 return redirect(url_for('calories'))
+#     else:
+#         return redirect(url_for('home'))
+#     return render_template('calories.html', form=form, time=now)
+
+
+# @app.route("/calories", methods=['GET', 'POST'])
+# def calories():
+#     now = datetime.now()
+#     now = now.strftime('%Y-%m-%d')
+
+#     get_session = session.get('email')
+#     if get_session is not None:
+#         form = CalorieForm()
+#         if form.validate_on_submit():
+#             if request.method == 'POST':
+#                 email = session.get('email')
+#                 food = request.form.get('food')
+#                 cals = food.split(" ")
+#                 cals = int(cals[-1][1:-1])
+#                 burn = request.form.get('burnout')
+
+#                 temp = mongo.db.calories.find_one(
+#                     {'email': email}, {'email', 'calories', 'burnout', 'date'})
+#                 if temp is not None and temp['date'] == str(now):
+#                     mongo.db.calories.update_many({'email': email}, {'$set': {
+#                                                   'calories': temp['calories'] + cals, 'burnout': temp['burnout'] + int(burn)}})
+#                 else:
+#                     mongo.db.calories.insert(
+#                         {'date': now, 'email': email, 'calories': cals, 'burnout': int(burn)})
+#                 flash(f'Successfully updated the data', 'success')
+#                 return redirect(url_for('calories'))
+
+#         # Fetch distinct categories and all food data
+#         categories = mongo.db.food.distinct('category')
+#         food_data = list(mongo.db.food.find({}, {'_id': 0, 'food': 1, 'category': 1}))
+
+#         return render_template('calories.html', form=form, time=now, categories=categories, food_data=food_data)
+#     else:
+#         return redirect(url_for('home'))
+    
+# @app.route("/calories", methods=['GET', 'POST'])
+# def calories():
+#     """
+#     Display the CalorieForm and dynamically update food options based on the selected category.
+#     """
+#     now = datetime.now().strftime('%Y-%m-%d')
+#     get_session = session.get('email')
+
+#     if get_session is not None:
+#         form = CalorieForm()
+
+#         # Fetch all food items from MongoDB
+#         all_food = list(mongo.db.food.find())
+#         # Extract unique categories
+#         categories = sorted({item['category'] for item in all_food if 'category' in item})
+
+#         # Get selected category from query params
+#         selected_category = request.args.get('category')
+#         # Filter foods based on selected category
+#         filtered_foods = [
+#             item['food'] for item in all_food if item.get('category') == selected_category
+#         ] if selected_category else []
+
+#         if form.validate_on_submit():
+#             if request.method == 'POST':
+#                 email = session.get('email')
+#                 food = request.form.get('food')
+#                 cals = food.split(" ")
+#                 cals = int(cals[-1][1:-1])
+#                 burn = request.form.get('burnout')
+
+#                 temp = mongo.db.calories.find_one(
+#                     {'email': email}, {'email', 'calories', 'burnout', 'date'})
+#                 if temp is not None and temp['date'] == str(now):
+#                     mongo.db.calories.update_many({'email': email}, {'$set': {
+#                                                   'calories': temp['calories'] + cals, 'burnout': temp['burnout'] + int(burn)}})
+#                 else:
+#                     mongo.db.calories.insert(
+#                         {'date': now, 'email': email, 'calories': cals, 'burnout': int(burn)})
+#                 flash(f'Successfully updated the data', 'success')
+#                 return redirect(url_for('calories'))
+
+#         # Pass all necessary data to the template
+#         return render_template(
+#             'calories.html',
+#             form=form,
+#             time=now,
+#             categories=categories,
+#             foods=filtered_foods,
+#             selected_category=selected_category
+#         )
+#     else:
+#         return redirect(url_for('home'))
+
 @app.route("/calories", methods=['GET', 'POST'])
 def calories():
     """
-    calorie() function displays the Calorieform (calories.html) template
-    route "/calories" will redirect to calories() function.
-    CalorieForm() called and if the form is submitted then various values are fetched and updated into the database entries
-    Input: Email, date, food, burnout
-    Output: Value update in database and redirected to home page
+    Display the CalorieForm and dynamically update food options based on the selected category.
     """
     now = datetime.now().strftime('%Y-%m-%d')
-
     get_session = session.get('email')
+
     if get_session is not None:
         form = CalorieForm()
+
+        # Fetch all food items from MongoDB
+        all_food = list(mongo.db.food.find())
+
+        # Define category mapping for typo correction
+        category_mapping = {
+            "Breakfas": "Breakfast",
+            "Din": "Dinner",
+            "Dinne": "Dinner",
+            "Lunc": "Lunch",
+            "Othe": "Other"
+        }
+
+        # Extract unique, cleaned-up categories
+        categories = sorted({category_mapping.get(item['category'], item['category']) for item in all_food if 'category' in item})
+
+        # Get selected category from query params
+        selected_category = request.args.get('category')
+
+        # Standardize selected category
+        selected_category = category_mapping.get(selected_category, selected_category)
+
+        # Filter foods based on selected category
+        filtered_foods = [
+            item['food'] for item in all_food
+            if category_mapping.get(item.get('category', ''), item.get('category')) == selected_category
+        ] if selected_category else []
+
         if form.validate_on_submit():
             if request.method == 'POST':
                 email = session.get('email')
-                food = form.food.data
-                try:
-                    cals = int(food.split(" ")[-1][1:-1])
-                except (ValueError, IndexError):
-                    flash('Invalid food input format. Please try again.', 'danger')
-                    return redirect(url_for('calories'))
-                burn = form.burnout.data
-
+                food = request.form.get('food')
+                
+                # Extract calories from the food dropdown value
+                cals = food.split(" ")
+                cals = int(cals[-1][1:-1])
+                
+                burn = request.form.get('burnout')  # Burnout input
+                
+                # Fetch existing data for the user
                 temp = mongo.db.calories.find_one(
-                    {'email': email, 'date': now})
-                if temp:
-                    mongo.db.calories.update_one({'email': email, 'date': now}, {
-                        '$set': {
-                            'calories': temp['calories'] + cals,
-                            'burnout': temp['burnout'] + int(burn)
-                        }
-                    })
+                    {'email': email}, {'email', 'calories', 'burnout', 'date'})
+                if temp is not None and temp['date'] == str(now):
+                    mongo.db.calories.update_many({'email': email}, {'$set': {
+                                                  'calories': temp['calories'] + cals, 'burnout': temp['burnout'] + int(burn)}})
                 else:
-                    mongo.db.calories.insert_one({
-                        'date': now,
-                        'email': email,
-                        'calories': cals,
-                        'burnout': int(burn)
-                    })
-                flash('Successfully updated the data', 'success')
+                    mongo.db.calories.insert(
+                        {'date': now, 'email': email, 'calories': cals, 'burnout': int(burn)})
+                flash(f'Successfully updated the data', 'success')
                 return redirect(url_for('calories'))
+
+        # Pass all necessary data to the template
+        return render_template(
+            'calories.html',
+            form=form,
+            time=now,
+            categories=categories,
+            foods=filtered_foods,
+            selected_category=selected_category
+        )
     else:
         return redirect(url_for('home'))
-    return render_template('calories.html', form=form, time=now)
 
 
 @app.route("/display_profile", methods=['GET', 'POST'])
