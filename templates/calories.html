@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} 
 {% block content %}
 <style>
     .content-section {
@@ -26,12 +26,6 @@
         border: 2px solid #00bcd4;
         border-radius: 8px;
     }
-    .form-control[name="time"] {
-        font-weight: bold;
-        background-color: #b2ebf2;
-        border: none;
-        color: #00796b;
-    }
     .btn-outline-info {
         background-color: #4caf50;
         color: white;
@@ -47,8 +41,8 @@
     }
 </style>
 
-<div class="content-section d-flex justify-content-center align-items-center">
-  <form method="POST" name="calorieform">
+<div class="content-section">
+  <form method="POST">
     {{ form.hidden_tag() }}
     <fieldset class="form-group">
       <legend>Today's Calories</legend>
@@ -57,28 +51,16 @@
         <p class="form-control form-control-lg" name="time">{{ time }}</p>
       </div>
       <div class="form-group">
-        <label class="form-control-label">Select Food Category</label>
-        <select class="form-control form-control-lg" id="food-category" name="category" onchange="filterFoods()">
-          <option value="" selected>Select category</option>
-          {% for category in categories %}
-          <option value="{{ category }}" {% if category == selected_category %}selected{% endif %}>
-            {{ category }}
-          </option>
-          {% endfor %}
-        </select>
+        {{ form.category.label(class="form-control-label") }}
+        {{ form.category(class="form-control form-control-lg", onchange="updateFoods()") }}
       </div>
       <div class="form-group">
-        <label class="form-control-label">Select Food</label>
-        <select class="form-control form-control-lg" id="food-dropdown" name="food">
-          <option value="" selected>Select food</option>
-          {% for food in foods %}
-          <option value="{{ food }}">{{ food }}</option>
-          {% endfor %}
-        </select>
+        {{ form.food.label(class="form-control-label") }}
+        {{ form.food(class="form-control form-control-lg") }}
       </div>
       <div class="form-group">
         {{ form.burnout.label(class="form-control-label") }}
-        {{ form.burnout(class="form-control form-control-lg", type="number", placeholder="Enter calories burned") }}
+        {{ form.burnout(class="form-control form-control-lg") }}
       </div>
     </fieldset>
     <div class="form-group">
@@ -88,8 +70,8 @@
 </div>
 
 <script>
-  function filterFoods() {
-      const category = document.getElementById('food-category').value;
+  function updateFoods() {
+      const category = document.querySelector('[name="category"]').value;
       window.location.href = `/calories?category=${category}`;
   }
 </script>
