@@ -424,6 +424,7 @@ def calories():
 
         # Handle dynamic food dropdown
         selected_category = request.args.get('category')
+
         if selected_category:
             # Fetch all foods belonging to the selected category
             foods = mongo.db.food.find({'category': selected_category})
@@ -465,7 +466,8 @@ def calories():
         return render_template(
             'calories.html',
             form=form,
-            time=now
+            time=now,
+            
         )
     else:
         return redirect(url_for('home'))

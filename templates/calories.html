@@ -52,11 +52,11 @@
       </div>
       <div class="form-group">
         {{ form.category.label(class="form-control-label") }}
-        {{ form.category(class="form-control form-control-lg", onchange="updateFoods()") }}
+        {{ form.category(class="form-control form-control-lg", id="category", onchange="updateFoods()") }}
       </div>
       <div class="form-group">
         {{ form.food.label(class="form-control-label") }}
-        {{ form.food(class="form-control form-control-lg") }}
+        {{ form.food(class="form-control form-control-lg", id="food") }}
       </div>
       <div class="form-group">
         {{ form.burnout.label(class="form-control-label") }}
@@ -70,9 +70,33 @@
 </div>
 
 <script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Retain the selected category if present
+      const categoryField = document.getElementById("category");
+      const selectedCategory = "{{ request.args.get('category', '') }}";
+      if (selectedCategory) {
+          categoryField.value = selectedCategory;
+      }
+
+      // Retain the selected food if the page reloads
+      const foodField = document.getElementById("food");
+      const selectedFood = "{{ form.food.data }}";
+      if (selectedFood) {
+          for (let i = 0; i < foodField.options.length; i++) {
+              if (foodField.options[i].value === selectedFood) {
+                  foodField.options[i].selected = true;
+                  break;
+              }
+          }
+      }
+  });
+
+  // Update food dropdown when a category is selected
   function updateFoods() {
-      const category = document.querySelector('[name="category"]').value;
-      window.location.href = `/calories?category=${category}`;
+      const category = document.getElementById("category").value;
+      if (category) {
+          window.location.href = `/calories?category=${category}`;
+      }
   }
 </script>
 {% endblock content %}
