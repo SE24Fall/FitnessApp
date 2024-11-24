@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <style>
         body {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             font-family: 'Poppins', sans-serif;
             color: #333;
         }
@@ -29,7 +29,7 @@
         }
 
         p {
-            color: #555;
+            color: #ffffff;
             font-size: 1.1em;
             line-height: 1.6;
         }
@@ -55,7 +55,7 @@
             display: block;
             width: 100%;
             padding: 15px;
-            background: #ff6f61;
+            background: #00897b;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -115,10 +115,10 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" style="background-color: #2b2d42; padding: 20px; border-radius: 10px;">
         <button class="btn-back-home" onclick="window.location.href='http://127.0.0.1:5000/dashboard'">Back to
             Homepage</button>
-        <h1>Fitness Planner</h1>
+        <h1 style="color: #eee7e7;">Fitness Planner</h1>
         <div class="main-content">
             <p>
                 Enter your current body weight and your target body weight. We will design a fitness and a diet plan for
@@ -127,7 +127,7 @@
             <p>
                 Enter your current weight and target weight (in kilograms) below:
             </p>
-            <div class="content-section">
+            <div class="content-section" style="width: auto">
                 <form method="POST" id="fitness-planner-form">
                     <div class="form-group">
                         <label for="currentweight">Current weight in kgs:</label>
