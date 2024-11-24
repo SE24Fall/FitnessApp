@@ -466,7 +466,7 @@ def calories():
         return render_template(
             'calories.html',
             form=form,
-            time=now,
+            time=now
             
         )
     else:
