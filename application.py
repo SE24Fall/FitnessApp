@@ -726,6 +726,12 @@ def get_bmi_category(bmi):
     else:
         return 'Obese'
 
+@app.route('/fitness_planner', methods=['GET', 'POST'])
+def fitness_planner():
+
+
+    return render_template("fitness_planner.html")
+
 
 @app.route("/send_email", methods=['GET', 'POST'])
 def send_email():
