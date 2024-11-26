@@ -529,19 +529,19 @@ def track_weight():
         dates = [entry['date'] for entry in sorted_user_data_hist]
         weights = [float(entry['weight']) for entry in sorted_user_data_hist]
 
-        # # Plotting Graph
-        # fig = px.line(x=dates, y=weights, labels={
-        #               'x': 'Date', 'y': 'Weight'}, title='Progress', markers=True, line_shape='spline')
-        # fig.add_trace(go.Scatter(x=dates, y=[target_weight] * len(dates),
-        #                          mode='lines',
-        #                          line=dict(color='green', width=1, dash='dot'),
-        #                          name='Target Weight'))
-        # fig.update_yaxes(
-        #     range=[min(min(weights), target_weight) - 5, max(max(weights), target_weight) + 5])
-        # fig.update_xaxes(
-        #     range=[min(dates), datetime.strptime(now, '%Y-%m-%d').date()])
-        # # Converting to HTML
-        # graph_html = fig.to_html(full_html=False)
+        # Plotting Graph
+        fig = px.line(x=dates, y=weights, labels={
+                      'x': 'Date', 'y': 'Weight'}, title='Progress', markers=True, line_shape='spline')
+        fig.add_trace(go.Scatter(x=dates, y=[target_weight] * len(dates),
+                                 mode='lines',
+                                 line=dict(color='green', width=1, dash='dot'),
+                                 name='Target Weight'))
+        fig.update_yaxes(
+            range=[min(min(weights), target_weight) - 5, max(max(weights), target_weight) + 5])
+        fig.update_xaxes(
+            range=[min(dates), datetime.strptime(now, '%Y-%m-%d').date()])
+        # Converting to HTML
+        graph_html = fig.to_html(full_html=False)
 
         last_10_entries = sorted_user_data_hist[-10:]
 
