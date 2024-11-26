@@ -27,7 +27,7 @@ Everyone participating in this project needs to abide by the aPAS - A Personal A
 
   ## Reporting Bugs
 
-  This section guides you through submitting a bug report for SE Group 53 of Fall 2023. 
+  This section guides you through submitting a bug report for SE Group 59 of Fall 2024. 
 
   When you are creating a bug report, please ensure that you include as many details as possible to understand the issue.
 
@@ -57,7 +57,7 @@ Everyone participating in this project needs to abide by the aPAS - A Personal A
   ## Pull Requests Methods
   The process described here has several goals: 
 
-  - Maintain BurnOut 4.0 quality
+  - Maintain BurnOut 5.0 quality
   - Fix problems that are important to the users 
   - Engage the community in working towards the best possible BurnOut 
   - Enable a sustainable system for Atom's maintainers to review contributions
