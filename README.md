@@ -4,41 +4,21 @@ https://www.youtube.com/watch?v=mSZjVjDSeXE
 <br>
 <br>
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+![GitHub License](https://img.shields.io/github/license/SE24Fall/FitnessApp)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14031340.svg)](https://doi.org/10.5281/zenodo.14031340)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
-![GitHub last commit (branch)](https://img.shields.io/badge/last%20commit-November%202024-orange)
-[![Python application](https://github.com/VibhavDeo/FitnessApp/actions/workflows/python-app.yml/badge.svg)](https://github.com/VibhavDeo/FitnessApp/actions/workflows/python-app.yml)
-[![Lint](https://github.com/VibhavDeo/FitnessApp/actions/workflows/syntax_checker.yml/badge.svg)](https://github.com/se-hw1/FitnessApp/actions/workflows/syntax_checker.yml)
-[![Pylint](https://github.com/VibhavDeo/FitnessApp/actions/workflows/pylint.yml/badge.svg)](https://github.com/se-hw1/FitnessApp/actions/workflows/pylint.yml)
-[![Tests On Push](http://github.com/VibhavDeo/FitnessApp/actions/workflows/unit_test.yml/badge.svg)](https://github.com/VibhavDeo/FitnessApp/actions/workflows/unit_test.yml)
+
+![GitHub Issues](https://img.shields.io/github/issues/SE24Fall/FitnessApp)
+![GitHub Issues closed](https://img.shields.io/github/issues-closed/SE24Fall/FitnessApp)
+![GitHub contributors](https://img.shields.io/github/contributors/SE24Fall/FitnessApp)
+![GitHub repo size](https://img.shields.io/github/repo-size/SE24Fall/FitnessApp)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SE24Fall/FitnessApp)
+![GitHub Pull Requests Closed](https://img.shields.io/github/issues-pr-closed/SE24Fall/FitnessApp)
+
+[![flake8](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/flake8.yaml/badge.svg)](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/flake8.yaml)
+[![pyflakes](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/pyflakes.yaml/badge.svg)](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/pyflakes.yaml)
+[![autopep8](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/autopep8.yaml/badge.svg)](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/autopep8.yaml)
 [![Code Coverage](https://github.com/VibhavDeo/FitnessApp/actions/workflows/code_cov.yml/badge.svg)](https://github.com/VibhavDeo/FitnessApp/actions/workflows/code_cov.yml)
-![GitHub code size in bytes](https://img.shields.io/badge/code%20size-260%20KB-%20green)
-
-<!--Badges-->
-<a href="https://github.com/VibhavDeo/FitnessApp/fork" target="blank">
-<img src="https://img.shields.io/github/forks/VibhavDeo/FitnessApp?style=flat-square" alt="FitnessApp/forks"/>
-</a>
-<a href="https://github.com/VibhavDeo/FitnessApp/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/VibhavDeo/FitnessApp?style=flat-square" alt="FitnessApp stars"/>
-</a>
-<a href="https://github.com/VibhavDeo/FitnessApp/issues" target="blank">
-<img src="https://img.shields.io/github/issues/VibhavDeo/FitnessApp?style=flat-square" alt="FitnessApp issues"/>
-</a>
-<a href="https://github.com/VibhavDeo/FitnessApp/issues" target="blank">
-<img src="https://img.shields.io/github/issues-closed/VibhavDeo/FitnessApp" alt="FitnessApp issues closed"/>
-</a>
-<a href="https://github.com/VibhavDeo/FitnessApp/pulls" target="blank">
-<img src="https://img.shields.io/github/issues-pr/VibhavDeo/FitnessApp?style=flat-square" alt="cheapBuy pull-requests"/>
-</a>
-<a href="https://github.com/VibhavDeo/FitnessApp/graphs/contributors" alt="Contributors">
-<img src="https://img.shields.io/github/contributors/VibhavDeo/FitnessApp" /></a>
-
-<a href="https://github.com/VibhavDeo/FitnessApp/graphs/commit-activity" alt="commit activity">
-<img src="https://img.shields.io/badge/Commit%20Activity-80%2Fweek-blue" /></a>
-
-<a href="https://img.shields.io/badge/repo%20size-147%20MB-%20blue" alt="repo size">
-<img src="https://img.shields.io/badge/repo%20size-147%20MB-%20blue" /></a>
 
 # BurnOut
 
@@ -76,6 +56,10 @@ BurnOut is an easy-to-use application designed to help users manage their daily 
 11. **Reviews:** Users can leave reviews and feedback on the fitness programs they've participated in, sharing their experiences with the community and helping others make informed choices.
 
 12. **Sleep Tracker** Users can now track how much hours of sleeps they need/don't need to have an optimal amount of sleep every night.
+  
+13. **Fitness Planner** Users can now describe their fitness goals in the application and get a personalized workout and diet plan to achieve those goals.
+
+14. **Weight tracker** Users can now track their weight weekly and compare actualy progress with target goals.
 
 This document serves as a comprehensive reference point for users, giving them insight into the functionalities of BurnOut and encouraging them to participate in its development as an open-source software project. As an open-source project, the community can contribute additional features and enhancements to make BurnOut even more robust and tailored to individual needs before its official market release. Furthermore, it assists developers by providing a clear understanding of the codebase and serves as a valuable resource for the project's continued development.
 
@@ -202,11 +186,11 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows
 Step 2:
 Git Clone the Repository
 
-    https://github.com/se-hw1/FitnessApp.git
+    https://github.com/SE24Fall/FitnessApp.git
 
 (OR) Download the .zip file on your local machine
 
-    https://github.com/se-hw1/FitnessApp.git
+    https://github.com/SE24Fall/FitnessApp.git
 
 Step 3:
 Install the required packages by running the following command in the terminal
@@ -232,7 +216,7 @@ If you get error regarding any of the following packages - pymongo and bson, the
 # Source Code
 
 Link to the repository:
-[REPO LINK](https://github.com/se-hw1/FitnessApp)
+[REPO LINK](https://github.com/SE24Fall/FitnessApp)
 
 # Future Scope
 
@@ -244,13 +228,17 @@ Link to the repository:
 
 # Team Members
 
-1. Navyatej Tummala (navyatej3112) [GitHub Profile](https://github.com/navyatej3112)
-2. Sasidhar Appalla  (sasidharappalla) [GitHub Profile](https://github.com/sasidharappalla)
-3. Niranjan Rajendran (Niranjan30) [GitHub Profile](https://github.com/Niranjan30)
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/abivis2k"><img src="https://avatars.githubusercontent.com/u/81951099?s=400&v=4" width="100px;" alt=""/><br/><sub><b>Abishek Viswanath Pittamandalam</b></sub></a></td>
+    <td align="center"><a href="https://github.com/ashwinchelsea14"><img src="https://avatars.githubusercontent.com/u/75059607?s=400&v=4" width="100px;" alt=""/><br/><sub><b>Ashwinkumar Manickam Vaithiyanathan</b></sub></a></td>
+    <td align="center"><a href="https://github.com/ishwarya0103"><img src="https://avatars.githubusercontent.com/u/179175525?s=400&v=4" width="100px;" alt=""/><br/><sub><b>Ishwarya Anandakrishnan</b></sub></a></td>
+  </tr>
+</table>
 
 # Contribution
 
-Please refer the [CONTRIBUTING.md](https://github.com/se-hw1/FitnessApp/blob/feature1/CONTRIBUTING.md) file for instructions on how to contribute to our repository.
+Please refer the [CONTRIBUTING.md](https://github.com/SE24Fall/FitnessApp/blob/feature1/CONTRIBUTING.md) file for instructions on how to contribute to our repository.
 
   <p align="center">
     <a href="https://github.com/token1029/FitnessApp/issues/new/choose">Report Bug</a>
