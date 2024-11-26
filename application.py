@@ -728,9 +728,36 @@ def get_bmi_category(bmi):
 
 @app.route('/fitness_planner', methods=['GET', 'POST'])
 def fitness_planner():
+    message = False
+    mode = ""
+    duration = 0
+    if request.method == 'POST':
+        current_weight = float(request.form.get('currentweight'))
+        target_weight = float(request.form.get('targetweight'))
 
+        change = abs(current_weight - target_weight)
 
-    return render_template("fitness_planner.html")
+        message = True
+        
+
+        if current_weight < target_weight: #weight gain
+            duration = int(change / 0.5) #in weeks
+            mode = 'Gain'
+            
+            return render_template('fitness_planner.html', message = message, mode = mode, duration = duration)
+
+        elif current_weight == target_weight: #no change - inform user
+            mode = 'None'
+
+            return render_template('fitness_planner.html', message = message, mode = mode, duration = duration)
+
+        elif current_weight > target_weight: #weight loss
+            duration = int(change / 0.5)
+            mode = 'Loss'
+
+            return render_template('fitness_planner.html', message = message, mode = mode, duration = duration)
+
+    return render_template("fitness_planner.html", message = message, mode = mode, duration = duration)
 
 
 @app.route("/send_email", methods=['GET', 'POST'])

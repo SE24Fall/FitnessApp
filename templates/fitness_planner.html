@@ -110,6 +110,10 @@
         .btn-back-home:hover {
             background: #2980b9;
         }
+
+        a {
+            color: #2980b9
+        }
     </style>
     <title>Fitness Planner</title>
 </head>
@@ -131,18 +135,53 @@
                 <form method="POST" id="fitness-planner-form">
                     <div class="form-group">
                         <label for="currentweight">Current weight in kgs:</label>
-                        <input type="text" name="currentweight" id="currentweight" class="form-control" />
+                        <input type="number" name="currentweight" id="currentweight" class="form-control" min="1"
+                            max="200" required />
                     </div>
                     <div class="form-group">
                         <label for="targetweight">Target weight in kgs:</label>
-                        <input type="text" name="targetweight" id="targetweight" class="form-control" />
+                        <input type="number" name="targetweight" id="targetweight" class="form-control" min="1"
+                            max="200" required />
                     </div>
                     <button type="submit" class="btn">Create a fitness and diet plan</button>
                 </form>
             </div>
-            <div class="result">
-
+            {% if message == True and mode == 'Gain' %}
+            <div style="color: white">
+                <h2 style="color: white">You need to follow the following diet plan for {{ duration }} weeks</h2>
+                <p>
+                <ul>
+                    <li><b>Breakfast:</b> Oatmeal with nuts, seeds and fruit or avocado toast with eggs and fruit</li>
+                    <li><b>Lunch:</b> Turkey and veggie wrap with hummus or Grilled tofu salad with avocado</li>
+                    <li><b>Dinner:</b> Tofu and vegetable stir fry or Shrimp and veggie pasta</li>
+                </ul>
+                </p>
+                <h2 style="color: white">
+                    You must also look into the following workout plans to gain weight:<a href="/gym">Strength
+                        training</a>, <a href="/core">Core strengthening</a>, <a href="hrx">HRX fitness</a>
+                </h2>
             </div>
+            {% elif message == True and mode == 'Loss' %}
+            <div style="color: white">
+                <h2 style="color: white">You need to follow the following diet plan for {{ duration }} weeks</h2>
+                <p>
+                <ul>
+                    <li><b>Breakfast:</b> 2 scrambled eggs, 1 whole grain toast, peanut butter, banana and low-fat milk
+                    </li>
+                    <li><b>Lunch:</b> Grilled chicken salad or quinoa chickpea bowl</li>
+                    <li><b>Dinner:</b> Tofu stir fry or Grilled salmon with roasted veggies</li>
+                </ul>
+                </p>
+                <h2 style="color: white">
+                    You must also look into the following workout plans to lose weight:<a href="/walk">Walking
+                        fitness</a>, <a href="/belly">Belly burner</a>, <a href="/dance">Dance fitness</a>
+                </h2>
+            </div>
+            {% elif message == True and mode == 'None' %}
+            <div style="color: white">
+                <h2 style="color: white">Please enter different values for current and target weight</h2>
+            </div>
+            {% endif %}
         </div>
     </div>
 </body>
