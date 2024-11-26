@@ -15,9 +15,9 @@ https://www.youtube.com/watch?v=mSZjVjDSeXE
 ![GitHub Pull Requests](https://img.shields.io/github/issues-pr/SE24Fall/FitnessApp)
 ![GitHub Pull Requests Closed](https://img.shields.io/github/issues-pr-closed/SE24Fall/FitnessApp)
 
-[![flake8](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/flake8.yaml/badge.svg)](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/flake8.yaml)
-[![pyflakes](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/pyflakes.yaml/badge.svg)](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/pyflakes.yaml)
-[![autopep8](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/autopep8.yaml/badge.svg)](https://github.com/SE24Fall/Job-Analyzer/actions/workflows/autopep8.yaml)
+[![flake8](https://github.com/SE24Fall/FitnessApp/actions/workflows/flake8.yaml/badge.svg)](https://github.com/SE24Fall/FitnessApp/actions/workflows/flake8.yaml)
+[![pyflakes](https://github.com/SE24Fall/FitnessApp/actions/workflows/pyflakes.yaml/badge.svg)](https://github.com/SE24Fall/FitnessApp/actions/workflows/pyflakes.yaml)
+[![autopep8](https://github.com/SE24Fall/FitnessApp/actions/workflows/autopep8.yaml/badge.svg)](https://github.com/SE24Fall/FitnessApp/actions/workflows/autopep8.yaml)
 [![Code Coverage](https://github.com/VibhavDeo/FitnessApp/actions/workflows/code_cov.yml/badge.svg)](https://github.com/VibhavDeo/FitnessApp/actions/workflows/code_cov.yml)
 
 # BurnOut
