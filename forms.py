@@ -1,4 +1,8 @@
-
+from apps import App
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from wtforms.fields.core import DateField, SelectField
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
 """
 Copyright (c) 2023 Rajat Chandak, Shubham Saboo, Vibhav Deo, Chinmay Nayak
 This code is licensed under MIT license (see LICENSE for details)
@@ -17,11 +21,6 @@ https://github.com/VibhavDeo/FitnessApp
 # from re import sub
 # from flask import app
 """Importing modules to create forms"""
-from apps import App
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from wtforms.fields.core import DateField, SelectField
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
 
 
 class RegistrationForm(FlaskForm):
