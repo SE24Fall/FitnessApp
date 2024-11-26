@@ -1,4 +1,7 @@
-
+from apps import App
+from flask_mail import Message
+import random
+import string
 """
 Copyright (c) 2023 Rajat Chandak, Shubham Saboo, Vibhav Deo, Chinmay Nayak
 This code is licensed under MIT license (see LICENSE for details)
@@ -14,10 +17,6 @@ https://github.com/VibhavDeo/FitnessApp
 """
 
 """Importing modules to check the send_email functions"""
-from apps import App
-from flask_mail import Message
-import random
-import string
 
 
 class Utilities:

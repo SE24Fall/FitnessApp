@@ -1,4 +1,6 @@
-
+from flask_mail import Mail
+from flask import Flask
+from flask_pymongo import PyMongo
 """
 Copyright (c) 2023 Rajat Chandak, Shubham Saboo, Vibhav Deo, Chinmay Nayak
 This code is licensed under MIT license (see LICENSE for details)
@@ -14,9 +16,6 @@ https://github.com/VibhavDeo/FitnessApp
 """
 
 """Importing flask to connect to the database"""
-from flask_mail import Mail
-from flask import Flask
-from flask_pymongo import PyMongo
 
 
 class App:

@@ -12,9 +12,9 @@ https://github.com/VibhavDeo/FitnessApp
 from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
-from bson import ObjectId
+# from bson import ObjectId
 import bcrypt
-import smtplib
+# import smtplib
 from flask import json, jsonify, Flask, render_template, session, url_for, flash, redirect, request
 from flask_mail import Mail, Message
 from flask_pymongo import PyMongo
@@ -467,7 +467,7 @@ def calories():
             'calories.html',
             form=form,
             time=now
-            
+
         )
     else:
         return redirect(url_for('home'))
@@ -728,6 +728,7 @@ def get_bmi_category(bmi):
     else:
         return 'Obese'
 
+
 @app.route('/fitness_planner', methods=['GET', 'POST'])
 def fitness_planner():
     message = False
@@ -740,26 +741,25 @@ def fitness_planner():
         change = abs(current_weight - target_weight)
 
         message = True
-        
 
-        if current_weight < target_weight: #weight gain
-            duration = int(change / 0.5) #in weeks
+        if current_weight < target_weight:  # weight gain
+            duration = int(change / 0.5)  # in weeks
             mode = 'Gain'
-            
-            return render_template('fitness_planner.html', message = message, mode = mode, duration = duration)
 
-        elif current_weight == target_weight: #no change - inform user
+            return render_template('fitness_planner.html', message=message, mode=mode, duration=duration)
+
+        elif current_weight == target_weight:  # no change - inform user
             mode = 'None'
 
-            return render_template('fitness_planner.html', message = message, mode = mode, duration = duration)
+            return render_template('fitness_planner.html', message=message, mode=mode, duration=duration)
 
-        elif current_weight > target_weight: #weight loss
+        elif current_weight > target_weight:  # weight loss
             duration = int(change / 0.5)
             mode = 'Loss'
 
-            return render_template('fitness_planner.html', message = message, mode = mode, duration = duration)
+            return render_template('fitness_planner.html', message=message, mode=mode, duration=duration)
 
-    return render_template("fitness_planner.html", message = message, mode = mode, duration = duration)
+    return render_template("fitness_planner.html", message=message, mode=mode, duration=duration)
 
 
 @app.route("/send_email", methods=['GET', 'POST'])
@@ -1156,8 +1156,8 @@ def submit_reviews():
             form = ReviewForm(request.form)
             if form.validate_on_submit():
                 print("imehere1")
-                email = session.get('email')
-                user = mongo.db.user.find_one({'email': email})
+                # email = session.get('email')
+                # user = mongo.db.user.find_one({'email': email})
                 name = form.name.data
                 review = form.review.data  # Correct the field name
                 mongo.db.reviews.insert_one({'name': name, 'review': review})

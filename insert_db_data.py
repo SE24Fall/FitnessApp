@@ -1,4 +1,6 @@
-
+from apps import App
+app = App()
+mongo = app.mongo
 """
 Copyright (c) 2023 Rajat Chandak, Shubham Saboo, Vibhav Deo, Chinmay Nayak
 This code is licensed under MIT license (see LICENSE for details)
@@ -14,9 +16,6 @@ https://github.com/VibhavDeo/FitnessApp
 """
 
 """"Importing app from apps.py"""
-from apps import App
-app = App()
-mongo = app.mongo
 
 
 # def insertfooddata():
@@ -39,17 +38,16 @@ def insertfooddata():
         lines = file.readlines()
 
     for i in range(1, len(lines)):
-        line = lines[i].strip()  
-        temp = line.split(",")  
-        
+        line = lines[i].strip()
+        temp = line.split(",")
+
         # Update or insert into MongoDB
         mongo.db.food.update_one(
-            {'food': temp[0]},  
-            {'$set': {'calories': (temp[1]), 'category': temp[2]}},  
+            {'food': temp[0]},
+            {'$set': {'calories': (temp[1]), 'category': temp[2]}},
             upsert=True
         )
-        #print(f"Updated: food={temp[0]}, calories={temp[1]}, category={temp[2]}")
-
+        # print(f"Updated: food={temp[0]}, calories={temp[1]}, category={temp[2]}")
 
 
 def insertexercisedata():
