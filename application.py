@@ -525,9 +525,9 @@ def track_weight():
             entry['date'] = datetime.strptime(entry['date'], '%Y-%m-%d').date()
 
         sorted_user_data_hist = sorted(user_data_hist, key=lambda x: x['date'])
-        # # Extracting data for the graph
-        # dates = [entry['date'] for entry in sorted_user_data_hist]
-        # weights = [float(entry['weight']) for entry in sorted_user_data_hist]
+        # Extracting data for the graph
+        dates = [entry['date'] for entry in sorted_user_data_hist]
+        weights = [float(entry['weight']) for entry in sorted_user_data_hist]
 
         # # Plotting Graph
         # fig = px.line(x=dates, y=weights, labels={
