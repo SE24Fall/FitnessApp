@@ -518,13 +518,13 @@ def track_weight():
         if not user_data:
             flash('User profile not found.', 'danger')
             return redirect(url_for('user_profile'))
-        # target_weight = float(user_data['target_weight'])
-        # user_data_hist = list(mongo.db.profile.find({'email': email}))
+        target_weight = float(user_data['target_weight'])
+        user_data_hist = list(mongo.db.profile.find({'email': email}))
 
-        # for entry in user_data_hist:
-        #     entry['date'] = datetime.strptime(entry['date'], '%Y-%m-%d').date()
+        for entry in user_data_hist:
+            entry['date'] = datetime.strptime(entry['date'], '%Y-%m-%d').date()
 
-        # sorted_user_data_hist = sorted(user_data_hist, key=lambda x: x['date'])
+        sorted_user_data_hist = sorted(user_data_hist, key=lambda x: x['date'])
         # # Extracting data for the graph
         # dates = [entry['date'] for entry in sorted_user_data_hist]
         # weights = [float(entry['weight']) for entry in sorted_user_data_hist]
@@ -543,7 +543,7 @@ def track_weight():
         # # Converting to HTML
         # graph_html = fig.to_html(full_html=False)
 
-        # last_10_entries = sorted_user_data_hist[-10:]
+        last_10_entries = sorted_user_data_hist[-10:]
 
         return render_template('track_weight.html', status=True, user_data=user_data, graph_html=graph_html, last_10_entries=last_10_entries)
     else:
