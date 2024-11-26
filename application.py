@@ -590,7 +590,7 @@ def user_profile():
                 })
 
             flash('User Profile Updated', 'success')
-            return redirect(url_for('display_profile'))
+            return redirect(url_for('track_weight'))
     else:
         return redirect(url_for('login'))
     return render_template('user_profile.html', status=True, form=form)
