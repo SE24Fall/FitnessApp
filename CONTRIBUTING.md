@@ -1,6 +1,6 @@
 # Contributing to BurnOut 5.0!!
 <h3>Hello!👋</h3>
-<p>Firstly, thank you so much for showing interest in BurnOut 4.0 and contributing to our project.👍</p>
+<p>Firstly, thank you so much for showing interest in BurnOut 5.0 and contributing to our project.👍</p>
 The following are a set of guidelines for contributing to BurnOut. We are open to suggestions to enhance our project so feel free to propose changes to this document in a pull request.
 
 
@@ -27,7 +27,7 @@ Everyone participating in this project needs to abide by the aPAS - A Personal A
 
   ## Reporting Bugs
 
-  This section guides you through submitting a bug report for SE Group 53 of Fall 2023. 
+  This section guides you through submitting a bug report for SE Group 59 of Fall 2024. 
 
   When you are creating a bug report, please ensure that you include as many details as possible to understand the issue.
 
@@ -57,7 +57,7 @@ Everyone participating in this project needs to abide by the aPAS - A Personal A
   ## Pull Requests Methods
   The process described here has several goals: 
 
-  - Maintain BurnOut 4.0 quality
+  - Maintain BurnOut 5.0 quality
   - Fix problems that are important to the users 
   - Engage the community in working towards the best possible BurnOut 
   - Enable a sustainable system for Atom's maintainers to review contributions
