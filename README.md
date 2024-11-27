@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=mSZjVjDSeXE
 <br>
 
 ![License](https://img.shields.io/badge/License-MIT-blue)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14031340.svg)](https://doi.org/10.5281/zenodo.14031340)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14226864.svg)](https://doi.org/10.5281/zenodo.14226864)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 
 ![GitHub Issues](https://img.shields.io/github/issues/SE24Fall/FitnessApp)
