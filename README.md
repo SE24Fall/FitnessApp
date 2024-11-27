@@ -118,7 +118,7 @@ This document serves as a comprehensive reference point for users, giving them i
 
 ## Dashboard
 
-<img src=https://github.com/se-hw1/FitnessApp/blob/feature1/static/img/Dashboard.png>
+<img width="1349" alt="dashboard" src="https://github.com/user-attachments/assets/cdff2c96-7389-43c0-ae41-2c745a8f5637">
 
 ## Excercise Section
 
@@ -138,7 +138,7 @@ This document serves as a comprehensive reference point for users, giving them i
 
 ## Enter Calories
 
-<img src=https://github.com/se-hw1/FitnessApp/blob/feature1/static/img/calo.png>
+<img width="1397" alt="calories" src="https://github.com/user-attachments/assets/66cb1529-dc6c-4de6-b689-dd30271f0bbd">
 
 ## Enter water intakes
 
@@ -146,7 +146,7 @@ This document serves as a comprehensive reference point for users, giving them i
 
 ## Blog
 
-<img src=https://github.com/se-hw1/FitnessApp/blob/feature1/static/img/blog.png>
+<img width="1444" alt="blog" src="https://github.com/user-attachments/assets/153d7b50-c444-4faf-9fac-c5b4391f783a">
 
 ## Shop workout gears
 
@@ -164,13 +164,17 @@ This document serves as a comprehensive reference point for users, giving them i
 
 <img src=https://github.com/se-hw1/FitnessApp/blob/feature1/static/img/fav.png>
 
+## Fitness Planner
+
+<img width="1346" alt="fitness planner" src="https://github.com/user-attachments/assets/1c26b7e6-2f70-4d66-b10b-122761f25ba1">
+
+## Weight Tracker
+
+<img width="1423" alt="weight tracker" src="https://github.com/user-attachments/assets/e5bb4b96-ac44-4ee8-b9d9-c6ea1ac63c32">
+
 ## Submit a Review
 
 <img src=https://github.com/se-hw1/FitnessApp/blob/feature1/static/img/Review.png>
-
-## View User Profile
-
-<img src=https://github.com/se-hw1/FitnessApp/blob/feature1/static/img/profile.png>
 
 ## Update Your Profile
 
