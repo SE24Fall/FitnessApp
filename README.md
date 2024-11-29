@@ -1,6 +1,7 @@
 # Link to new features video:
 
-https://www.youtube.com/watch?v=mSZjVjDSeXE
+https://youtu.be/AI91g1nWeYI
+
 <br>
 <br>
 
